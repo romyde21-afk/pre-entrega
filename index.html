@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mis tres D: productos, servicios y atención directa en un solo lugar.">
+  <title>Mis tres D</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="header-top">
+      <img src="logo.png" alt="Logo Mis tres D" class="logo">
+      <h1>Mis tres D</h1>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#resenas">Reseñas</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="inicio" class="hero">
+      <h2>Bienvenidos</h2>
+      <p>Descubrí nuestros productos y servicios en un solo lugar.</p>
+      <a class="boton" href="#productos">Ver productos</a>
+    </section>
+
+    <section id="nosotros">
+      <h2>Nosotros</h2>
+      <p>Somos una tienda online que nació para simplificar tus compras: catálogo claro, envíos a todo el país y
+        atención personalizada antes y después de comprar.</p>
+    </section>
+
+    <section id="video-presentacion">
+      <h2>Conocé más sobre nosotros</h2>
+      <div class="multimedia">
+        <img src="producto-destacado.png" alt="Producto destacado de la tienda">
+
+        <video controls>
+          <source src="video.mp4" type="video/mp4">
+          <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español">
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      </div>
+    </section>
+
+    <!-- FLEXBOX: cards responsivas -->
+    <section id="productos">
+      <h2>Productos</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Producto A</h3>
+          <p>Descripción breve del producto A y sus principales beneficios.</p>
+          <p class="precio">$12.500</p>
+          <a class="boton" href="#contacto">Consultar</a>
+        </article>
+        <article class="card">
+          <h3>Producto B</h3>
+          <p>Descripción breve del producto B y sus principales beneficios.</p>
+          <p class="precio">$18.900</p>
+          <a class="boton" href="#contacto">Consultar</a>
+        </article>
+        <article class="card">
+          <h3>Producto C</h3>
+          <p>Descripción breve del producto C y sus principales beneficios.</p>
+          <p class="precio">$24.300</p>
+          <a class="boton" href="#contacto">Consultar</a>
+        </article>
+        <article class="card">
+          <h3>Producto D</h3>
+          <p>Descripción breve del producto D y sus principales beneficios.</p>
+          <p class="precio">$31.000</p>
+          <a class="boton" href="#contacto">Consultar</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- GRID: reseñas -->
+    <section id="resenas">
+      <h2>Reseñas</h2>
+      <div class="resenas-grid">
+        <blockquote class="resena resena-destacada">
+          <p>Compré por primera vez y me respondieron todas las dudas en el día. El producto llegó antes de lo prometido
+            y tal cual las fotos.</p>
+          <footer>Lucía F. — Córdoba</footer>
+        </blockquote>
+        <blockquote class="resena">
+          <p>Excelente calidad y muy buen precio.</p>
+          <footer>Martín G. — Rosario</footer>
+        </blockquote>
+        <blockquote class="resena">
+          <p>El envío fue rápido y el embalaje impecable.</p>
+          <footer>Sofía T. — Mendoza</footer>
+        </blockquote>
+        <blockquote class="resena">
+          <p>Me ayudaron a resolver un problema con la garantía sin vueltas.</p>
+          <footer>Julián P. — Buenos Aires</footer>
+        </blockquote>
+        <blockquote class="resena">
+          <p>Atención cordial y productos como se muestran.</p>
+          <footer>Camila R. — La Plata</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <ul class="lista-servicios">
+        <li>Envíos a domicilio a todo el país</li>
+        <li>Garantía y servicio posventa</li>
+        <li>Asesoramiento personalizado</li>
+        <li>Medios de pago seguros</li>
+      </ul>
+    </section>
+
+    <!-- CONTACTO: responsivo con media queries -->
+    <section id="contacto">
+      <h2>Formulario de Contacto</h2>
+      <div class="contacto-layout">
+        <p class="contacto-texto">¿Tenés una consulta sobre un producto, un envío o un pago? Completá el formulario y te
+          respondemos a la brevedad.</p>
+
+        <form action="https://formspree.io/f/xwlvoboa" method="POST">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde Mis tres D">
+          <input type="text" name="_gotcha_antispam" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mis tres D. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+
+</html>

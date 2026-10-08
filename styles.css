@@ -1,0 +1,281 @@
+/* ===== Variables ===== */
+:root {
+  --verde-oscuro: #0f3d3e;
+  --verde: #1b6b64;
+  --amarillo: #ffb703;
+  --fondo: #f2f6f5;
+  --texto: #12201f;
+  --blanco: #ffffff;
+  --fuente-titulos: "Sora", sans-serif;
+  --fuente-texto: "Source Sans 3", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fondo);
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.2;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--amarillo);
+  outline-offset: 2px;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 1rem 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo { height: 48px; width: auto; }
+header h1 { margin: 0; font-size: 1.5rem; }
+
+/* ===== Lista de navegación ===== */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+nav a:hover { border-bottom-color: var(--amarillo); }
+
+html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
+
+/* ===== Secciones generales ===== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+main > section { padding: 3rem 0; }
+main > section > h2 { margin-top: 0; font-size: 1.75rem; }
+main p { max-width: 70ch; }
+
+.boton, button[type="submit"] {
+  display: inline-block;
+  background-color: var(--amarillo);
+  color: var(--texto);
+  font-family: var(--fuente-titulos);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.7rem 1.4rem;
+  border: 0;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton:hover, button[type="submit"]:hover { background-color: #ffc93c; }
+
+/* ===== Background: degradado en el hero ===== */
+.hero {
+  max-width: none;
+  margin: 0 -1.5rem;
+  padding: 5rem 1.5rem !important;
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde) 100%);
+  color: var(--blanco);
+}
+
+.hero h2 { font-size: clamp(2rem, 5vw, 3rem) !important; }
+.hero p { font-size: 1.2rem; }
+
+/* ===== Multimedia ===== */
+.multimedia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.multimedia img,
+.multimedia video {
+  flex: 1 1 300px;
+  min-width: 0;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* ===== FLEXBOX: Productos ===== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blanco);
+  border-top: 6px solid var(--verde);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(15, 61, 62, 0.15);
+}
+
+.card h3 { margin: 0 0 0.5rem; }
+.card .precio {
+  margin: auto 0 1rem;
+  padding-top: 0.5rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--verde);
+}
+.card .boton { align-self: flex-start; }
+
+/* ===== GRID: Reseñas ===== */
+.resenas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.resena {
+  margin: 0;
+  padding: 1.25rem;
+  background-color: var(--blanco);
+  border-left: 4px solid var(--amarillo);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resena p { margin: 0 0 1rem; }
+.resena footer { font-weight: 600; color: var(--verde); }
+
+.resena-destacada {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  font-size: 1.25rem;
+}
+.resena-destacada footer { color: var(--amarillo); }
+
+/* ===== Servicios ===== */
+.lista-servicios {
+  padding-left: 1.2rem;
+}
+.lista-servicios li { margin-bottom: 0.4rem; }
+
+/* ===== Contacto ===== */
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(15, 61, 62, 0.15);
+}
+
+label { font-weight: 600; }
+
+input, textarea {
+  font: inherit;
+  padding: 0.6rem;
+  border: 1px solid #9bb1ae;
+  border-radius: 6px;
+  width: 100%;
+}
+
+textarea { resize: vertical; }
+button[type="submit"] { align-self: flex-start; margin-top: 0.5rem; }
+
+/* ===== Tabla ===== */
+.tabla-scroll { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--blanco);
+}
+
+th, td {
+  border: 1px solid #c5d3d1;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+thead th { background-color: var(--verde-oscuro); color: var(--blanco); }
+.fila-destacada {
+  background-color: #fff3cd;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+body > footer {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1.5rem;
+}
+body > footer p { margin: 0; max-width: none; }
+
+/* ===== Media Queries ===== */
+@media (max-width: 900px) {
+  .resenas-grid { grid-template-columns: repeat(2, 1fr); }
+  .resena-destacada { grid-column: span 2; grid-row: auto; }
+}
+
+@media (max-width: 768px) {
+  .contacto-layout { grid-template-columns: 1fr; gap: 1rem; }
+  header { position: static; }
+  html { scroll-padding-top: 1rem; }
+}
+
+@media (max-width: 560px) {
+  header h1 { font-size: 1.2rem; }
+  nav ul { flex-direction: column; gap: 0.25rem; }
+  .resenas-grid { grid-template-columns: 1fr; }
+  .resena-destacada { grid-column: auto; }
+  form { padding: 1rem; }
+  button[type="submit"] { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
