@@ -1,4 +1,4 @@
-# Mi Tienda Online
+# Mis tres D
 
 Proyecto de e-commerce desarrollado con HTML y CSS. La página presenta una tienda online con su catálogo de productos, reseñas de clientes, servicios y un formulario de contacto para que los visitantes envíen consultas.
 
